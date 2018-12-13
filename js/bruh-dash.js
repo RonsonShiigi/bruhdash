@@ -100,7 +100,26 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the end
-  takeRight: function () {
+  takeRight: function (arr,n) {
+    console.log(arr)
+    console.log(n)
+    var final = [];
+    if(n===0){
+      return final
+    }else if(n>arr.length){
+      return arr
+    }else if(typeof n !== 'number'){
+      var popcorn = arr.pop();
+      final.push(popcorn)
+      return final;
+    }else if( typeof n === 'number'){
+      for(var i=0;i<n;i++){
+        var numPop = arr.pop();
+        final.push(numPop);
+      }final.reverse();
+      return final;
+    }
+    
 
   },
 
