@@ -71,7 +71,17 @@ global.bruhdash = {
   },
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function() {
+  dropRight: function(arr,n) {
+    if(typeof n !== "number"){
+      arr.pop();
+      return arr;
+    }else if(n===0){
+      return arr
+    }else if(typeof n ==='number'){
+      for(var i=0;i<n;i++){
+        arr.pop();
+      }return arr
+    }
 
   },
 
