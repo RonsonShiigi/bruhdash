@@ -86,7 +86,16 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
+  take: function (arr,n) {
+    if(typeof n !== 'number'){
+      return arr.slice(0,1)
+    }else if(n===0){
+      var empty = [];
+      return empty;
+    }else if(typeof n === 'number'){
+      var sliced = arr.slice(0,n);
+      return sliced
+    }
 
   },
 
