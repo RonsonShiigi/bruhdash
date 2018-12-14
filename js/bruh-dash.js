@@ -101,8 +101,8 @@ global.bruhdash = {
 
   // creates a slice of an array with n elements taken from the end
   takeRight: function (arr,n) {
-    console.log(arr)
-    console.log(n)
+    // console.log(arr)
+    // console.log(n)
     var final = [];
     if(n===0){
       return final
@@ -125,17 +125,47 @@ global.bruhdash = {
 
   // fills elements of array with specified value from the start index
   // up to but not including the end index
-  fill: function() {
+  fill: function(arr,str,start,end) {
+    // console.log(arr)
+    // console.log(str)
+    // console.log(start)
+    // console.log(end)
+    var newArr = [];
+    var howMany = end - start;
+    if(typeof start === 'undefined' || typeof end === 'undefined'){
+      for(var i=0;i<arr.length;i++){
+        newArr.push(str)
+      }return newArr;
+    }for(var i=0; i<arr.length;i++){
+        if(i>=start && i<=end-1){
+          arr[i]=str
+        }
+    }
+      return arr
+    },
 
-  },
 
   // removes all given values from an array
-  pull: function () {
-
+  pull: function (arr,x,y) {
+    // console.log(arr);
+    // console.log(x)
+    // console.log(y)
+    var final = [];
+    for(var i=0; i<arr.length;i++){
+      if(arr[i] !== x && arr[i] !== y){
+        final.push(arr[i])
+      }
+    }return final
   },
 
   // removes elements of an array corresponding to the given indices
-  pullAt: function () {
+  pullAt: function (arr,specsArr) {
+    console.log(arr);
+    console.log(specsArr)
+    var final = [];
+    for(var i=0;i<specsArr.length;i++){
+      final.push(arr[specsArr[i]])
+    }return final;
 
   },
 
