@@ -160,8 +160,8 @@ global.bruhdash = {
 
   // removes elements of an array corresponding to the given indices
   pullAt: function (arr,specsArr) {
-    console.log(arr);
-    console.log(specsArr)
+    // console.log(arr);
+    // console.log(specsArr)
     var final = [];
     for(var i=0;i<specsArr.length;i++){
       final.push(arr[specsArr[i]])
@@ -170,8 +170,16 @@ global.bruhdash = {
   },
 
   // creates an array excluding all the specified values
-  without: function() {
-
+  without: function(arr,n,x,y) {
+    console.log(arr);
+    console.log(n);
+    console.log(x);
+    var final = [];
+    for(var i=0;i<arr.length;i++){
+      if(arr[i] !== n && arr[i] !==x){
+        final.push(arr[i])
+      }
+    }return final
   },
 
   // returns an array with specified values excluded
