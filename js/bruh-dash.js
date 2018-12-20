@@ -209,15 +209,15 @@ global.bruhdash = {
 
   // creates an array of grouped elements
   zip: function (arr, arr2) {
-    console.log(arr)
-    console.log(arr2)
+    // console.log(arr)
+    // console.log(arr2)
     var final = [];
     for(var i=0;i<arr.length;i++){
       for(var x=0;x<arr2.length;x++){
         if(i===x){
-        var inner =[];
-        inner.push(arr[i],arr2[x])
-        final.push(inner)
+          var inner =[];
+          inner.push(arr[i],arr2[x])
+          final.push(inner)
         }
       }
     }return final
@@ -226,7 +226,23 @@ global.bruhdash = {
   },
 
   // creates an array of grouped elements in their pre-zip configuration
-  unzip: function () {
+  unzip: function (arr) {
+    console.log(arr);
+    var final =[];
+    var nums =[];
+    var letters = [];
+    for(var i=0;i<arr.length;i++){
+      for(var x=0;x<arr[i].length;x++){
+        if(x===0){
+          nums.push(arr[i][x])
+        }else{
+          letters.push(arr[i][x])
+        }
+      }
+    }
+    final.push(nums);
+    final.push(letters);
+    return final;
 
   },
 
