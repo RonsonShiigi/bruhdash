@@ -227,7 +227,7 @@ global.bruhdash = {
 
   // creates an array of grouped elements in their pre-zip configuration
   unzip: function (arr) {
-    console.log(arr);
+    // console.log(arr);
     var final =[];
     var nums =[];
     var letters = [];
@@ -247,8 +247,30 @@ global.bruhdash = {
   },
 
   // creates an array of elements into groups of length of specified size
-  chunk: function(){
+  chunk: function(arr,para){
+    console.log(arr)
+    console.log(para)
+    var empty = [];
+    var final = [];
+    var loop = arr.length / para ;
+    console.log(loop)
+    if(para===0){
+      return empty;
+    }else if(arr.length===0){
+      return empty;
+    }else if(arr.length===para || arr.length<para){
+      empty.push(arr);
+      return empty;
+    }else if(para<arr.length){
+      for(var i=0;i<loop;i++){
+        var inner = arr.splice(0,para)
+        final.push(inner);
+      }
+        return final
+      
+    }
 
+    
   },
 
   // iterates over elements of a collection and invokes iteratee for each element
