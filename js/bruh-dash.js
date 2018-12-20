@@ -170,10 +170,10 @@ global.bruhdash = {
   },
 
   // creates an array excluding all the specified values
-  without: function(arr,n,x,y) {
-    console.log(arr);
-    console.log(n);
-    console.log(x);
+  without: function(arr,n,x,) {
+    // console.log(arr);
+    // console.log(n);
+    // console.log(x);
     var final = [];
     for(var i=0;i<arr.length;i++){
       if(arr[i] !== n && arr[i] !==x){
@@ -183,8 +183,24 @@ global.bruhdash = {
   },
 
   // returns an array with specified values excluded
-  difference: function() {
-
+  difference: function(arr,specsArr) {
+    // console.log(arr);
+    // console.log(specsArr)
+    var final = [];
+    
+    for(var i=0;i<arr.length;i++){
+      for(var x=0;x<specsArr.length;x++){
+        if(arr[i]=== specsArr[x]){
+          break;
+        }else if(specsArr[x]>=arr[i]){
+          final.push(arr[i]);
+          break; 
+        }
+      }
+    }
+    return final;
+    
+    
   },
 
   /*******************
@@ -192,7 +208,20 @@ global.bruhdash = {
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
+  zip: function (arr, arr2) {
+    console.log(arr)
+    console.log(arr2)
+    var final = [];
+    for(var i=0;i<arr.length;i++){
+      for(var x=0;x<arr2.length;x++){
+        if(i===x){
+        var inner =[];
+        inner.push(arr[i],arr2[x])
+        final.push(inner)
+        }
+      }
+    }return final
+    
 
   },
 
